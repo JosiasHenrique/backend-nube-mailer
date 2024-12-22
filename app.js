@@ -2,7 +2,7 @@ const express = require('express');
 const dotenv = require('dotenv');
 const cors = require('cors');
 const morgan = require('morgan');
-const authRoutes = require('./routes/authRoutes');
+const nvemshopRoute = require('./routes/nuvemshopRoute');
 
 dotenv.config();
 
@@ -12,8 +12,8 @@ app.use(express.json());
 app.use(cors());
 app.use(morgan('dev'));
 
-// Usar as rotas de autenticação
-app.use('/auth', authRoutes);
+
+app.use('/nuvemshop', nvemshopRoute);
 
 // Rota de exemplo
 app.get('/', (req, res) => {
